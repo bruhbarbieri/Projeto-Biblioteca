@@ -1,0 +1,26 @@
+<h2>Cadastro de Empréstimo</h2>
+
+<div>
+  <input type="number" placeholder="ID Usuário" [(ngModel)]="novo.usuarioId">
+  <input type="number" placeholder="ID Livro" [(ngModel)]="novo.livroId">
+  <input type="date" [(ngModel)]="novo.dataEmprestimo">
+  <input type="date" [(ngModel)]="novo.dataDevolucao">
+
+  <button (click)="criar()">Criar Empréstimo</button>
+</div>
+
+<hr>
+
+<h2>Lista de Empréstimos</h2>
+
+<ul>
+  <li *ngFor="let e of emprestimos">
+    <strong>{{ e.livro?.titulo }}</strong><br>
+    Usuário: {{ e.usuario?.nome }}<br>
+    Status: {{ e.status }}<br>
+  
+    <button *ngIf="e.status !== 'DEVOLVIDO'" (click)="devolver(e.id!)">
+      Devolver
+    </button>
+  </li>
+</ul>

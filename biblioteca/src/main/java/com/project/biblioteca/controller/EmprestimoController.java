@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/emprestimos")
+@CrossOrigin(origins = "http://localhost:4200")
 public class EmprestimoController {
 
     private final EmprestimoService emprestimoService;
@@ -37,5 +38,10 @@ public class EmprestimoController {
     @GetMapping("/usuarios/{id}/recomendacoes")
     public List<Livro> recomendar(@PathVariable Long id) {
         return emprestimoService.recomendarLivros(id);
+    }
+
+    @GetMapping
+    public List<Emprestimo> listar() {
+        return emprestimoService.listarTodos();
     }
 }

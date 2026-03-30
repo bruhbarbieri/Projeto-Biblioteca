@@ -31,7 +31,7 @@ public class Emprestimo {
     @Column(name = "data_devolucao", nullable = false)
     private LocalDate dataDevolucao;
 
-    @NotBlank
+    @NotNull
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private StatusEmprestimo status;

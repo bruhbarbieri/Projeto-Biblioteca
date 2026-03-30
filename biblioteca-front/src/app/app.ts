@@ -1,12 +1,10 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component } from '@angular/core';
+import { EmprestimoComponent } from './pages/emprestimo/emprestimo.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.html',
-  styleUrl: './app.css'
+  standalone: true,
+  imports: [EmprestimoComponent],
+  templateUrl: './app.html'
 })
-export class App {
-  protected readonly title = signal('biblioteca-front');
-}
+export class App {}

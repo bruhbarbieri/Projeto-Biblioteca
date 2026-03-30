@@ -95,4 +95,8 @@ public class EmprestimoService {
                 .filter(l -> !livrosIds.contains(l.getId()))
                 .toList();
     }
+
+    public List<Emprestimo> listarTodos() {
+        return emprestimoRepository.findAll();
+    }
 }
